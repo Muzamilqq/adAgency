@@ -1,6 +1,8 @@
 {
-    "experimentalServices": 
-            "routePrefix": "/",
-            "framework": "vite"
-        
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://ad-agency-backend-six.vercel.app"
+    }
+  ]
 }
