@@ -1,8 +1,15 @@
 {
-  "rewrites": [
+  "version": 3,
+  "builds": [
+    { "src": "package.json", "use": "@vercel/node" },
     {
-      "source": "/api/(.*)",
-      "destination": "https://ad-agency-backend-six.vercel.app"
+      "src": "vite.config.ts",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "dist" }
     }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/backend/$1" },
+    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
