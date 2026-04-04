@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import type { User, AuthState } from "@/types";
 import axios from "axios";
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3001";
+const API_URL = "";
 
 export function useAuth() {
   const [authState, setAuthState] = useState<AuthState>({
@@ -21,7 +21,7 @@ export function useAuth() {
       }
 
       try {
-        const res = await axios.get(`${API_URL}/api/auth/me`, {
+        const res = await axios.get("/api/auth/me", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setAuthState({

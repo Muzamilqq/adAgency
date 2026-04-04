@@ -1,0 +1,6 @@
+{
+    "experimentalServices": 
+            "routePrefix": "/",
+            "framework": "vite"
+        
+}
