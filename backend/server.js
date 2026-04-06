@@ -18,7 +18,6 @@ const app = express();
 app.use(helmet());
 
 // CORS configuration
-// TODO: Update CORS_ORIGIN in .env to match your frontend URL
 app.use(
   cors({
     origin: process.env.CORS_ORIGIN || "http://localhost:5173",
@@ -112,22 +111,7 @@ app.use((err, req, res, next) => {
 const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, () => {
-  console.log(`
-╔════════════════════════════════════════════════════════════╗
-║                                                            ║
-║   AdAgency Pro Backend Server                              ║
-║                                                            ║
-║   Server running on port ${PORT}                            ║
-║   Environment: ${(process.env.NODE_ENV || "development").padEnd(20)}              ║
-║                                                            ║
-║   API Endpoints:                                           ║
-║   • Health:    http://localhost:${PORT}/health                      ║
-║   • Auth:      http://localhost:${PORT}/api/auth                    ║
-║   • Campaigns: http://localhost:${PORT}/api/campaigns               ║
-║   • AI:        http://localhost:${PORT}/api/ai                      ║
-║                                                            ║
-╚════════════════════════════════════════════════════════════╝
-  `);
+  console.log("Server running...");
 });
 
 module.exports = app;
