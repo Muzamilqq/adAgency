@@ -107,11 +107,4 @@ app.use((err, req, res, next) => {
   });
 });
 
-// Start server
-const PORT = process.env.PORT || 3001;
-
-app.listen(PORT, () => {
-  console.log("Server running...");
-});
-
 module.exports = app;
