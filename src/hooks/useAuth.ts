@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import type { User, AuthState } from "@/types";
 import axios from "axios";
 const API_URL = "https://adagency-backend-production.up.railway.app";
+axios.defaults.baseURL = API_URL;
 
 export function useAuth() {
   const [authState, setAuthState] = useState<AuthState>({
